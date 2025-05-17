@@ -119,8 +119,16 @@ function showResult() {
 }
 
 function switchLanguage(lang) {
-  currentLang = lang;
-  document.getElementById("quiz-title").textContent =
-    lang === "zh" ? "To Build a Fire：極地環境下看你的性格" : "To Build a Fire: Discover Your Arctic Personality";
-  if (currentQuestion < quizData.length) showQuestion();
+  const quizTitle = document.getElementById("quiz-title");
+  if (lang === 'zh') {
+    quizTitle.textContent = "To Build a Fire：極地環境下看你的性格";
+    window.language = 'zh';
+  } else {
+    quizTitle.textContent = "To Build a Fire: Discover Your Personality in the Frozen Wild";
+    window.language = 'en';
+  }
+  if (typeof renderCurrentQuestion === 'function') {
+    renderCurrentQuestion();
+  }
 }
+
