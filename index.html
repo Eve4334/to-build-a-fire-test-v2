@@ -1,16 +1,36 @@
-
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>To Build a Fire：極地環境下看你的性格</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Build a Fire 測驗</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div id="app">
-    <h1>To Build a Fire：極地環境下看你的性格</h1>
-    <!-- 題目、選項、動畫、結果等會透過 JS 插入 -->
+  <div class="language-toggle">
+    <button onclick="switchLanguage('zh')">中文</button>
+    <button onclick="switchLanguage('en')">English</button>
   </div>
-  <script src="js/main.js"></script>
+
+  <div id="quiz-container">
+    <h1 id="quiz-title">To Build a Fire：極地環境下看你的性格</h1>
+    <div id="question-container"></div>
+    <div id="answer-buttons"></div>
+  </div>
+
+  <div id="result" class="hidden">
+    <h2 id="result-title"></h2>
+    <img id="result-image" src="" alt="MBTI result image" />
+    <p id="result-text"></p>
+    <canvas id="radarChart" width="300" height="300"></canvas>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', showQuestion);
+  </script>
 </body>
 </html>
+
