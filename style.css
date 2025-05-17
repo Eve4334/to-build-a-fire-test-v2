@@ -1,0 +1,14 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: linear-gradient(#e0f7fa, #ffffff);
+  color: #003344;
+}
+#app {
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
